@@ -1,6 +1,6 @@
 #!/bin/bash
 
-su pepis -c 'zenity \
+su pepis -c 'pkill zenity; zenity \
 	--question \
 	--ellipsize \
 	--display=:0.0 \
