@@ -1,6 +1,10 @@
 #!/bin/bash
 
-su pepis -c 'pkill zenity; zenity \
+su pepis -c 'pkill zenity'
+
+if [ "`prime-select query`" != "intel" ]
+then
+	su pepis -c 'pkill zenity; zenity \
 	--question \
 	--ellipsize \
 	--display=:0.0 \
@@ -8,4 +12,5 @@ su pepis -c 'pkill zenity; zenity \
 	--title="NVIDIA Prime" \
 	--ok-label="Logout and switch graphics"' && \
 	sudo prime-select intel && \
-	service lightdm restart
+	service lightdm restart &
+fi

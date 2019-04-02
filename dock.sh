@@ -1,6 +1,10 @@
 #!/bin/bash
 
-su pepis -c 'zenity \
+su pepis -c 'pkill zenity'
+
+if [ "`prime-select query`" != "nvidia" ]
+then
+	su pepis -c 'zenity \
 	--question \
 	--ellipsize \
 	--display=:0.0 \
@@ -8,6 +12,7 @@ su pepis -c 'zenity \
 	--title="NVIDIA Prime" \
 	--ok-label="Logout and switch graphics"' && \
 	prime-select nvidia && \
-	xrandr --output VGA-0 --auto && \
-	xrandr --output LVDS-1-1 --off && \
-	service lightdm restart
+	service lightdm restart &
+fi
+
+

@@ -29,3 +29,8 @@ Remember to add the following line to `~/.bashrc`
 ```
 xhost local:$USER > /dev/null
 ```
+
+```
+xrandr --output VGA-0 --auto && \
+xrandr --output LVDS-1-1 --off
+```
