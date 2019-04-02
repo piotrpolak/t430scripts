@@ -1,2 +1,3 @@
 #!/bin/bash
-sudo prime-select intel && gnome-session-quit --logout --force
+sudo -S prime-select intel && sudo -S service lightdm restart
+

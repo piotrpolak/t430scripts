@@ -1,2 +1,2 @@
 #!/bin/bash
-sudo prime-select nvidia && gnome-session-quit --logout --force
+sudo -S prime-select nvidia && sudo -S service lightdm restart
